@@ -1,4 +1,5 @@
 import Footer from './_components/_footer/Footer'
+import ConnectingSection from './_components/_home/ConnectingSection'
 import Header from './_components/_home/Header'
 import InteligenceSection from './_components/_home/InteligenceSection'
 import ScrollSection from './_components/_home/ScrollSection'
@@ -12,6 +13,7 @@ export default function Home() {
             <main>
                 <ScrollSection />
                 <InteligenceSection />
+                <ConnectingSection />
             </main>
             <Footer />
         </>

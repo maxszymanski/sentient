@@ -4,7 +4,7 @@ import Link from 'next/link'
 function Header() {
     return (
         <header
-            className="flex min-h-screen items-center justify-center bg-cover py-16 md:items-end md:bg-center lg:pb-16"
+            className="flex min-h-screen items-center justify-center bg-cover py-16 sm:pt-32 md:items-end md:bg-center md:pt-16 lg:pb-16"
             style={{ backgroundImage: `url(${Hero.src})` }}
         >
             <div className="mx-auto flex w-full max-w-[675px] flex-col items-center px-4 text-center md:px-0">
