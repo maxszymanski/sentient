@@ -6,6 +6,7 @@
     --color-white72: rgba(255, 255, 255, 0.72);
     --font-twk: var(--font-twk), sans-serif;
     --font-britti: var(--font-britti), sans-serif;
+    --font-diatype: var(--font-diatype), sans-serif;
 }
 
 .nav-bg {
@@ -19,7 +20,7 @@
 }
 
 .my-outline {
-    @apply outline-none ring-blue-900 focus:outline-none focus-visible:rounded-full focus-visible:ring-2;
+    @apply outline-none ring-[#2196F3] focus:outline-none focus-visible:rounded-full focus-visible:ring-2;
 }
 
 .request-shadow {
@@ -72,8 +73,9 @@
 }
 
 .gradient-text {
+    display: inline-block;
     background: linear-gradient(
-        90deg,
+        180deg,
         #ffffff 0%,
         rgba(255, 255, 255, 0.8) 100%
     );
@@ -89,4 +91,70 @@
         0px 0px 24.4px -12px rgba(255, 255, 255, 0.32) inset,
         0px 12px 15.4px 0px rgba(0, 0, 0, 0.06);
     background: radial-gradient(circle at center, #c3c3c3 0%, #ffffff 100%);
+}
+
+.heading-gradient-text {
+    display: inline-block;
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0.5) 112.5%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.line-gradient {
+    background: linear-gradient(180deg, rgba(83, 197, 255, 0) 0%, #53c5ff 100%);
+}
+.long-line {
+    background: linear-gradient(
+        90deg,
+        rgba(119, 195, 255, 0),
+        rgba(119, 195, 255, 0.2),
+        rgba(119, 195, 255, 0)
+    );
+}
+
+.footer-nav {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.02) 100%
+    );
+    backdrop-filter: blur(30px);
+
+    position: relative;
+}
+.footer-nav::before {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.02) 100%
+    );
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background:
+        linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.12)
+        ),
+        linear-gradient(
+            292.72deg,
+            rgba(119, 195, 255, 0) 82.41%,
+            #77c3ff 98.99%
+        );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
 }

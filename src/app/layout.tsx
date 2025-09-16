@@ -15,6 +15,10 @@ export const britti = localFont({
     src: '../fonts/britti-sans-regular.woff2',
     variable: '--font-britti',
 })
+export const diatype = localFont({
+    src: '../fonts/ABCDiatypePlusVariable-Regular.woff2',
+    variable: '--font-diatype',
+})
 
 export const metadata: Metadata = {
     title: {
@@ -32,7 +36,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${inter.className} ${twkLausanne.variable} ${britti.variable} text-mygray bg-dark antialiased`}
+                className={`${inter.className} ${twkLausanne.variable} ${britti.variable} ${diatype.variable} text-mygray bg-dark antialiased`}
             >
                 {children}
             </body>

@@ -19,7 +19,7 @@ function Nav() {
     useClickOutside(navRef, closeNav)
     return (
         <nav
-            className={`absolute left-0 top-0 z-50 w-full md:left-1/2 md:top-10 md:mx-auto md:max-w-[826px] md:-translate-x-1/2`}
+            className={`sticky left-0 top-0 z-50 w-full md:absolute md:left-1/2 md:top-10 md:mx-auto md:max-w-[826px] md:-translate-x-1/2`}
         >
             <div ref={navRef}>
                 <MobileNav

@@ -25,14 +25,14 @@ function MobileNav({ toogleNav, isExpanded, closeNav }: NavProps) {
             <div className="nav-bg relative z-50 flex items-center justify-between border-b px-4 py-3">
                 <Logo />
                 <button
-                    className="my-outline text-mygray flex size-8 shrink-0 items-center justify-center rounded-full duration-300"
+                    className="my-outline text-mygray flex size-8 shrink-0 items-center justify-center rounded-full px-1 duration-300"
                     onClick={toogleNav}
                     aria-label={`${isExpanded ? 'Close' : 'Open'} navigation`}
                 >
                     {isExpanded ? (
-                        <TbX className="pointer-events-none size-6" />
+                        <TbX className="pointer-events-none size-8" />
                     ) : (
-                        <TbMenu2 className="pointer-events-none size-6" />
+                        <TbMenu2 className="pointer-events-none size-8" />
                     )}
                 </button>
                 <div className="nav-small-border absolute bottom-0 left-1/2 h-px w-[230px] -translate-x-1/2"></div>
