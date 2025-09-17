@@ -233,3 +233,13 @@
         rgba(119, 195, 255, 0.5) 100%
     );
 }
+
+.glow-bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: inherit;
+    filter: blur(4px);
+    opacity: 1;
+    z-index: -1;
+}

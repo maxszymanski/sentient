@@ -3,7 +3,7 @@
 import { TbMenu2, TbX } from 'react-icons/tb'
 import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
-import Logo from '../_icons/Logo'
+import LogoLink from '../_icons/LogoLink'
 import NavList from './NavList'
 import ReqestLink from '../_ui/ReqestLink'
 
@@ -23,7 +23,7 @@ function MobileNav({ toogleNav, isExpanded, closeNav }: NavProps) {
     return (
         <div className="relative h-[56px] w-full md:hidden">
             <div className="nav-bg relative z-50 flex items-center justify-between border-b px-4 py-3">
-                <Logo />
+                <LogoLink />
                 <button
                     className="my-outline text-mygray flex size-8 shrink-0 items-center justify-center rounded-full px-1 duration-300"
                     onClick={toogleNav}
