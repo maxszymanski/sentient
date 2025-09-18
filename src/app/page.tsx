@@ -2,6 +2,7 @@ import Footer from './_components/_footer/Footer'
 import ComparisonSection from './_components/_home/ComparisonSection'
 import ConnectingSection from './_components/_home/ConnectingSection'
 import FaqSection from './_components/_home/FaqSection'
+import FormSection from './_components/_home/FormSection'
 import Header from './_components/_home/Header'
 import InteligenceSection from './_components/_home/InteligenceSection'
 import ScrollSection from './_components/_home/ScrollSection'
@@ -33,6 +34,7 @@ export default function Home() {
                         style={{ backgroundImage: `url(${Rectangle.src})` }}
                     ></div> */}
                 </div>
+                <FormSection />
             </main>
             <Footer />
         </>

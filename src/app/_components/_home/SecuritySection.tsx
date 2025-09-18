@@ -66,7 +66,7 @@ function SecuritySection() {
                         {/* <div className="absolute bottom-0 z-20 hidden h-[400px] w-full bg-[#010513] blur-[140px] md:block"></div> */}
                     </div>
                 </div>
-                <div className="absolute bottom-0 z-30 hidden h-[300px] w-full bg-[#010513] blur-[140px] md:block"></div>
+                <div className="absolute bottom-0 z-40 hidden h-[300px] w-full bg-[#010513] blur-[50px] md:block"></div>
             </div>
         </section>
     )

@@ -141,7 +141,7 @@
             rgba(255, 255, 255, 0.12)
         ),
         linear-gradient(
-            292.72deg,
+            310.72deg,
             rgba(119, 195, 255, 0) 82.41%,
             #77c3ff 98.99%
         );
@@ -184,7 +184,7 @@
 }
 .security-box {
     background: linear-gradient(
-        900deg,
+        90deg,
         rgba(255, 255, 255, 0.04) 0%,
         rgba(153, 153, 153, 0) 100%
     );
@@ -242,4 +242,42 @@
     filter: blur(4px);
     opacity: 1;
     z-index: -1;
+}
+
+.faq-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background:
+        linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.12)
+        ),
+        linear-gradient(
+            310.72deg,
+            rgba(119, 195, 255, 0) 90.41%,
+            #77c3ff 98.99%
+        );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.faq-shadow {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.faq-active-bg {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.06) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(30.1px);
 }
