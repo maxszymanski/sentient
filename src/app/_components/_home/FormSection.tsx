@@ -4,12 +4,12 @@ import SectionEllipse from '@/assets/form-ellipse.webp'
 
 function FormSection() {
     return (
-        <section className="relative z-50">
+        <section className="relative z-20 pb-20">
             <div
                 className="absolute -top-[500px] left-0 z-10 h-[1000px] w-[1000px] max-w-full bg-contain bg-no-repeat"
                 style={{ backgroundImage: `url(${SectionEllipse.src})` }}
             ></div>
-            <div className="relative mx-auto w-full max-w-[1200px] pl-2 xl:pl-0">
+            <div className="relative z-20 mx-auto w-full max-w-[1200px] pl-2 xl:pl-0">
                 <div
                     className="relative mt-20 flex h-full w-full flex-col bg-cover bg-left bg-no-repeat pt-10 lg:mt-32 xl:h-[843px] xl:bg-center"
                     style={{ backgroundImage: `url(${SectionBg.src})` }}

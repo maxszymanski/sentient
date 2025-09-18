@@ -51,7 +51,7 @@ function ContactForm() {
         <div className="mx-auto mt-[60px] w-full max-w-[520px] pl-2 sm:pl-0">
             <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="relative flex h-[537px] w-full flex-col bg-cover bg-left bg-no-repeat px-4 py-7 pt-10 sm:bg-center sm:px-7"
+                className="relative flex h-full min-h-[537px] w-full flex-col bg-cover bg-left bg-no-repeat px-4 pt-10 sm:bg-contain sm:bg-top sm:px-7"
                 style={{ backgroundImage: `url(${Bg.src})` }}
             >
                 <div className="flex w-full flex-col gap-5">
@@ -97,14 +97,14 @@ function ContactForm() {
                         valueFromWatch={watch('system')}
                         options={options}
                     />
+                    <button
+                        type="submit"
+                        className="text-dark my-outline hover: hover:text-dark/90 flex h-[43px] w-full shrink-0 cursor-pointer items-center justify-center self-center rounded-[59px] border-[0.5px] border-white/50 bg-white transition-colors duration-300 hover:bg-white/90"
+                        disabled={isSubmitting}
+                    >
+                        Secure your spot on waitlist
+                    </button>
                 </div>
-                <button
-                    type="submit"
-                    className="text-dark my-outline hover: hover:text-dark/90 mt-8 flex h-[43px] w-full shrink-0 cursor-pointer items-center justify-center self-center rounded-[59px] border-[0.5px] border-white/50 bg-white transition-colors duration-300 hover:bg-white/90"
-                    disabled={isSubmitting}
-                >
-                    Secure your spot on waitlist
-                </button>
             </form>
         </div>
     )

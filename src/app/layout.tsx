@@ -44,7 +44,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${inter.className} ${twkLausanne.variable} ${britti.variable} ${diatype.variable} text-mygray bg-dark antialiased`}
+                className={`${inter.className} ${twkLausanne.variable} ${britti.variable} ${diatype.variable} text-mygray bg-dark relative h-full antialiased`}
             >
                 {children}
             </body>

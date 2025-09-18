@@ -39,7 +39,7 @@ function MobileNav({ toogleNav, isExpanded, closeNav }: NavProps) {
             </div>
 
             <div
-                className={`text-mygray nav-bg sticky z-40 flex flex-col gap-8 px-4 py-6 transition-transform duration-300 ${isExpanded ? '-translate-y-0' : '-translate-y-[140%]'}`}
+                className={`text-mygray nav-bg sticky z-40 flex flex-col gap-8 px-4 py-6 transition-transform duration-300 md:hidden ${isExpanded ? '-translate-y-0' : '-translate-y-[140%] md:-translate-y-0'}`}
             >
                 <NavList />
                 <ReqestLink />
