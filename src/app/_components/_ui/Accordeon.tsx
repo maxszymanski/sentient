@@ -17,7 +17,7 @@ function Accordeon({ onClick, isOpen, title, answer }: AccorderonProps) {
             {isOpen && <Image fill alt="" src={Bg} className="object-cover" />}
             <h3 className="w-full">
                 <button
-                    className={`border-white/12 flex w-full items-center justify-between gap-1 rounded-[10px] border bg-[#FFFFFF14] px-3 py-[18px] text-left transition-colors duration-300 sm:gap-6 md:px-5 ${isOpen ? 'cursor-auto' : 'group-hover:text-secondary2 cursor-pointer'}`}
+                    className={`border-white/12 flex w-full items-center justify-between gap-1 rounded-[10px] border px-3 py-[18px] text-left transition-colors duration-300 sm:gap-6 md:px-5 ${isOpen ? 'cursor-auto bg-[rgba(255,255,255,0.08)]' : 'cursor-pointer bg-[rgba(255,255,255,0.08)] hover:bg-[rgba(255,255,255,0.12)]'}`}
                     onClick={onClick}
                 >
                     <span className="font-twk heading-gradient-text text-base sm:text-lg sm:leading-5">

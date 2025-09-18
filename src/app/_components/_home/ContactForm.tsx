@@ -32,6 +32,7 @@ function ContactForm() {
     } = useForm<ContactType>({ resolver: zodResolver(contactSchema) })
 
     const onSubmit: SubmitHandler<ContactType> = async (data) => {
+        console.log(data)
         alert('Success')
 
         reset()

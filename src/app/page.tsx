@@ -29,12 +29,12 @@ export default function Home() {
                     <ComparisonSection />
                     <FaqSection />
 
-                    {/* <div
-                        className="absolute left-0 top-0 z-40 h-full w-full max-w-full bg-contain bg-no-repeat"
+                    <FormSection />
+                    <div
+                        className="absolute -top-[500px] left-0 z-40 h-full w-full bg-cover bg-center bg-no-repeat 2xl:-top-[800px]"
                         style={{ backgroundImage: `url(${Rectangle.src})` }}
-                    ></div> */}
+                    ></div>
                 </div>
-                <FormSection />
             </main>
             <Footer />
         </>

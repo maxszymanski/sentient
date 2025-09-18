@@ -34,7 +34,7 @@ function ComparisonSection() {
                     {btns.map((name, index) => (
                         <button
                             key={name}
-                            className={`font-twk relative z-20 block shrink-0 cursor-pointer text-nowrap border-b pb-[26px] pt-[53px] text-center text-lg leading-5 transition-colors duration-300 hover:text-white ${selectedBtn === index ? 'border-blue-600 text-white' : 'text-white72 border-transparent'} `}
+                            className={`font-twk relative z-20 block shrink-0 cursor-pointer text-nowrap border-b-2 pb-[26px] pt-[53px] text-center text-lg leading-5 transition-colors duration-300 hover:text-white ${selectedBtn === index ? 'border-[#77C3FF] text-white' : 'text-white72 border-transparent'} `}
                             onClick={() => setSelectedBtn(index)}
                         >
                             <span className="block">{name}</span>
