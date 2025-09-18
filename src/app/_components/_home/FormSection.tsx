@@ -1,10 +1,11 @@
 import SectionBg from '@/assets/form-bg.png'
+import ContactForm from './ContactForm'
 
 function FormSection() {
     return (
-        <section className="pl-2 xl:pl-0">
+        <section className="mx-auto w-full max-w-[1200px] pl-2 xl:pl-0">
             <div
-                className="relative mx-auto mt-20 flex h-full min-h-[843px] w-full max-w-[1200px] flex-col bg-cover bg-left bg-no-repeat pt-10 lg:mt-32 xl:bg-center"
+                className="relative mt-20 flex h-full w-full flex-col bg-cover bg-left bg-no-repeat pt-10 lg:mt-32 xl:h-[843px] xl:bg-center"
                 style={{ backgroundImage: `url(${SectionBg.src})` }}
             >
                 <h2 className="heading-gradient-text sm:leading-14 font-twk mx-auto mb-6 w-full px-2 text-center text-4xl tracking-[-0.5px] sm:text-[44px]">
@@ -18,6 +19,7 @@ function FormSection() {
                     get early access and help shape the future of human-AI
                     collaboration.
                 </p>
+                <ContactForm />
             </div>
         </section>
     )
