@@ -25,7 +25,7 @@ const chatbotList = [
 function ComparisonSection() {
     const [selectedBtn, setSelectedBtn] = useState(0)
     return (
-        <section className="pt-20 lg:pt-40">
+        <section className="relative z-50 pt-20 lg:pt-40">
             <div className="mx-auto w-full max-w-[725px]">
                 <h2 className="heading-gradient-text leading-14 font-twk mx-auto mb-[60px] w-full px-4 text-center text-[44px] tracking-[-0.5px] lg:px-0">
                     Beyond chatbots <br /> and productivity apps

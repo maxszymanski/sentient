@@ -4,7 +4,7 @@ import SectionEllipse from '@/assets/form-ellipse.webp'
 
 function FormSection() {
     return (
-        <section className="relative">
+        <section className="relative z-50">
             <div
                 className="absolute -top-[500px] left-0 z-10 h-[1000px] w-[1000px] max-w-full bg-contain bg-no-repeat"
                 style={{ backgroundImage: `url(${SectionEllipse.src})` }}

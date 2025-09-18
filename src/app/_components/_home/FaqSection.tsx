@@ -8,10 +8,10 @@ import FaqQuestions from '../_ui/FaqQuestions'
 function FaqSection() {
     return (
         <section
-            className="bg-dark relative mx-auto w-full max-w-[1440px] bg-top bg-no-repeat sm:mt-0 md:pt-1 xl:px-[120px]"
+            className="bg-dark mx-auto w-full max-w-[1440px] bg-top bg-no-repeat sm:mt-0 md:pt-1 xl:px-[120px]"
             style={{ backgroundImage: `url(${FaqBg.src})` }}
         >
-            <div className="relative z-20 flex w-full flex-col gap-10 px-4 pt-[400px] lg:flex-row">
+            <div className="relative z-50 flex w-full flex-col gap-10 px-4 pt-[400px] lg:flex-row">
                 <div className="mx-auto w-full max-w-[352px]">
                     <h2 className="heading-gradient-text sm:leading-14 font-twk mx-auto mb-6 w-full text-4xl tracking-[-0.5px] sm:text-[44px] lg:px-0">
                         Questions about <br /> your second brain
