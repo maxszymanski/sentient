@@ -26,6 +26,14 @@ export const metadata: Metadata = {
         default: 'Sentient',
     },
     description: 'Sentient page',
+    icons: {
+        icon: [
+            { url: '/favicon.svg' },
+            { url: '/favicon-32.svg', sizes: '32x32', type: 'image/svg' },
+        ],
+
+        apple: '/favicon-180.svg',
+    },
 }
 
 export default function RootLayout({

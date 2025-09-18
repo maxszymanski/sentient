@@ -1,6 +1,7 @@
 'use client'
 import { InputHTMLAttributes, useState } from 'react'
 import { FieldError } from 'react-hook-form'
+import InputBg from '@/assets/input-bg.png'
 
 interface InputType
     extends InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
@@ -39,14 +40,19 @@ function Input({
                 type="text"
                 {...formRegister}
                 {...rest}
-                className={`placeholder:text-white/24 input-shadow placeholder:text-sans input-border relative inline-block w-full rounded-[10px] px-3.5 py-3 leading-5 text-white placeholder:leading-5 ${
+                className={`placeholder:text-white/24 input-shadow placeholder:text-sans input-border relative inline-block h-[49px] w-full rounded-[10px] bg-left px-3.5 py-3 leading-5 text-white outline-none placeholder:leading-5 focus-visible:outline-none sm:bg-cover sm:bg-center ${
                     error ? 'bg-red-300/20' : 'bg-dark'
-                } ${shouldFloat ? 'faq-border' : ''} `}
+                } ${shouldFloat ? '' : 'border-white/12 border'} `}
                 onFocus={() => setIsFocused(true)}
                 onBlur={(e) => {
                     setIsFocused(false)
                     setHasValue(!!e.target.value)
                 }}
+                style={
+                    shouldFloat
+                        ? { backgroundImage: `url(${InputBg.src})` }
+                        : {}
+                }
             />
 
             {error && message && (
