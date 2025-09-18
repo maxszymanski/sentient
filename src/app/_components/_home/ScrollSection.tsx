@@ -2,6 +2,7 @@
 import SectionElispe from '@/assets/section-elipse.png'
 import Image from 'next/image'
 import Card from '../_ui/Card'
+import SlideImag from '../_ui/SlideImag'
 
 const cards = [
     {
@@ -45,7 +46,7 @@ const cards = [
 function ScrollSection() {
     return (
         <>
-            <section className="flex min-h-screen items-center justify-center">
+            <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
                 <div className="relative flex w-full max-w-7xl flex-col items-center justify-center gap-8 px-4 py-16 text-center lg:gap-0">
                     <h2 className="font-twk md:leading-14 heading-gradient-text w-f z-20 h-full w-full max-w-[590px] text-4xl md:text-[44px] md:tracking-[-0.5px] lg:absolute">
                         Your brain wasn&apos;t designed for digital overload
@@ -61,6 +62,7 @@ function ScrollSection() {
                         </Card>
                     ))}
                 </div>
+                <SlideImag />
             </section>
             <section className="flex min-h-screen items-center justify-center">
                 <div className="flex max-w-7xl flex-col items-center px-4 py-16 text-center">
