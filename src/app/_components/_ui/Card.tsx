@@ -12,7 +12,7 @@ interface CardProps {
 function Card({ title, children, position }: CardProps) {
     return (
         <div
-            className={`faq-border card-bg relative z-10 overflow-hidden rounded-2xl p-6 text-left lg:absolute`}
+            className={`faq-border card-bg relative z-10 hidden overflow-hidden rounded-2xl p-6 text-left lg:absolute lg:block`}
             style={{ left: `${position.x}px`, top: `${position.y}px` }}
         >
             <Image
