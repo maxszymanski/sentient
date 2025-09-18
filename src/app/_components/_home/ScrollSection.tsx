@@ -1,3 +1,4 @@
+'use client'
 import SectionElispe from '@/assets/section-elipse.png'
 import Image from 'next/image'
 import Card from '../_ui/Card'
