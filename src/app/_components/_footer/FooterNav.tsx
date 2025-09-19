@@ -1,4 +1,4 @@
-import Logo from '../_icons/Logo'
+import LogoLink from '../_icons/LogoLink'
 import FooterLink from './FooterLink'
 
 const footerLinks = [
@@ -43,7 +43,7 @@ const footerLinks = [
 function FooterNav() {
     return (
         <div className="border-white/12 flex flex-col gap-12 border-b pb-12 pt-12 md:flex-row md:items-start md:justify-between md:gap-6 xl:pb-[61px]">
-            <Logo />
+            <LogoLink />
             <div className="flex flex-col gap-10 sm:flex-row sm:flex-wrap lg:gap-20 xl:gap-[100px]">
                 {footerLinks.map((section) => (
                     <div key={section.title}>

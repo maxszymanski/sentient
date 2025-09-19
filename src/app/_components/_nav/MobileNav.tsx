@@ -21,8 +21,8 @@ function MobileNav({ toogleNav, isExpanded, closeNav }: NavProps) {
     }, [pathname, closeNav])
 
     return (
-        <div className="relative h-[56px] w-full md:hidden">
-            <div className="nav-bg relative z-50 flex items-center justify-between border-b px-4 py-3">
+        <div className="relative z-[100] h-[56px] w-full md:hidden">
+            <div className="nav-bg relative z-[100] flex items-center justify-between border-b px-4 py-3">
                 <LogoLink />
                 <button
                     className="my-outline text-mygray flex size-8 shrink-0 items-center justify-center rounded-full px-1 duration-300"

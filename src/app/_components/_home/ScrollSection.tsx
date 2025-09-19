@@ -73,38 +73,61 @@ function ScrollSection() {
     const scrollRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        const handleWheel = (e: WheelEvent) => {
-            const element = scrollRef.current
-            if (!element) return
+        const element = scrollRef.current
+        if (!element) return
 
+        const handleWheel = (e: WheelEvent) => {
             const { scrollTop } = element
 
             if (scrollTop === 0 && e.deltaY < 0) {
                 e.preventDefault()
 
-                interface WindowWithFullpage extends Window {
-                    fullpage_api?: {
-                        moveSectionUp: () => void
+                const fullpage = (
+                    window as Window & {
+                        fullpage_api?: { moveSectionUp: () => void }
                     }
-                }
+                ).fullpage_api
 
-                const windowWithFullpage = window as WindowWithFullpage
-                if (windowWithFullpage.fullpage_api) {
-                    windowWithFullpage.fullpage_api.moveSectionUp()
-                }
+                fullpage?.moveSectionUp()
             }
         }
 
-        const element = scrollRef.current
+        let startY = 0
 
-        if (element) {
-            element.addEventListener('wheel', handleWheel, { passive: false })
+        const handleTouchStart = (e: TouchEvent) => {
+            startY = e.touches[0].clientY
         }
+
+        const handleTouchMove = (e: TouchEvent) => {
+            const { scrollTop } = element
+            const currentY = e.touches[0].clientY
+            const diffY = currentY - startY
+
+            if (scrollTop === 0 && diffY > 0) {
+                e.preventDefault()
+
+                const fullpage = (
+                    window as Window & {
+                        fullpage_api?: { moveSectionUp: () => void }
+                    }
+                ).fullpage_api
+
+                fullpage?.moveSectionUp()
+            }
+        }
+
+        element.addEventListener('wheel', handleWheel, { passive: false })
+        element.addEventListener('touchstart', handleTouchStart, {
+            passive: true,
+        })
+        element.addEventListener('touchmove', handleTouchMove, {
+            passive: false,
+        })
 
         return () => {
-            if (element) {
-                element.removeEventListener('wheel', handleWheel)
-            }
+            element.removeEventListener('wheel', handleWheel)
+            element.removeEventListener('touchstart', handleTouchStart)
+            element.removeEventListener('touchmove', handleTouchMove)
         }
     }, [])
 
@@ -113,7 +136,7 @@ function ScrollSection() {
             <Header />
 
             <div className="section">
-                <section className="bg-dark relative flex min-h-screen items-center justify-center overflow-hidden">
+                <section className="bg-dark relative flex min-h-dvh items-center justify-center overflow-hidden lg:min-h-screen">
                     <div className="relative flex w-full max-w-7xl items-center justify-center gap-8 px-4 py-16 text-center lg:gap-0">
                         <h2 className="font-twk md:leading-14 heading-gradient-text w-f relative z-40 h-full w-full max-w-[590px] text-4xl md:text-[44px] md:tracking-[-0.5px]">
                             Your brain wasn&apos;t designed for digital overload
@@ -150,7 +173,7 @@ function ScrollSection() {
                 </section>
             </div>
             <div className="section">
-                <section className="flex min-h-screen items-center justify-center">
+                <section className="flex min-h-dvh items-center justify-center lg:min-h-screen">
                     <div className="flex max-w-7xl flex-col items-center px-4 py-16 text-center">
                         <Image
                             src={SectionElispe}
