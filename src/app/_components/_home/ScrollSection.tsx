@@ -76,44 +76,56 @@ function ScrollSection() {
         const element = scrollRef.current
         if (!element) return
 
+        // --- desktop (wheel) ---
         const handleWheel = (e: WheelEvent) => {
-            const { scrollTop } = element
+            const { scrollTop, scrollHeight, clientHeight } = element
 
             if (scrollTop === 0 && e.deltaY < 0) {
                 e.preventDefault()
-
-                const fullpage = (
-                    window as Window & {
-                        fullpage_api?: { moveSectionUp: () => void }
-                    }
-                ).fullpage_api
-
-                fullpage?.moveSectionUp()
+                window.fullpage_api?.moveSectionUp()
+            } else if (
+                scrollTop + clientHeight >= scrollHeight &&
+                e.deltaY > 0
+            ) {
+                e.preventDefault()
+                window.fullpage_api?.moveSectionDown()
             }
         }
 
+        // --- mobile (touch) ---
         let startY = 0
+        let triggered = false
 
         const handleTouchStart = (e: TouchEvent) => {
             startY = e.touches[0].clientY
+            triggered = false // reset na początku gestu
         }
 
         const handleTouchMove = (e: TouchEvent) => {
-            const { scrollTop } = element
+            if (triggered) return // nie pozwól na wielokrotne odpalenie w jednym geście
+
+            const { scrollTop, scrollHeight, clientHeight } = element
             const currentY = e.touches[0].clientY
             const diffY = currentY - startY
 
-            if (scrollTop === 0 && diffY > 0) {
+            if (scrollTop === 0 && diffY > 30) {
+                // mocniej pociągnięte w dół
                 e.preventDefault()
-
-                const fullpage = (
-                    window as Window & {
-                        fullpage_api?: { moveSectionUp: () => void }
-                    }
-                ).fullpage_api
-
-                fullpage?.moveSectionUp()
+                window.fullpage_api?.moveSectionUp()
+                triggered = true
+            } else if (
+                scrollTop + clientHeight >= scrollHeight &&
+                diffY < -30
+            ) {
+                // mocniej pociągnięte w górę na dole
+                e.preventDefault()
+                window.fullpage_api?.moveSectionDown()
+                triggered = true
             }
+        }
+
+        const handleTouchEnd = () => {
+            triggered = false // reset po zakończeniu gestu
         }
 
         element.addEventListener('wheel', handleWheel, { passive: false })
@@ -123,11 +135,13 @@ function ScrollSection() {
         element.addEventListener('touchmove', handleTouchMove, {
             passive: false,
         })
+        element.addEventListener('touchend', handleTouchEnd, { passive: true })
 
         return () => {
             element.removeEventListener('wheel', handleWheel)
             element.removeEventListener('touchstart', handleTouchStart)
             element.removeEventListener('touchmove', handleTouchMove)
+            element.removeEventListener('touchend', handleTouchEnd)
         }
     }, [])
 
