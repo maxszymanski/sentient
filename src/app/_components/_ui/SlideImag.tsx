@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import James from '@/assets/animated/james.png'
 import EmptyR from '@/assets/animated/empty-right.png'
@@ -10,16 +11,35 @@ import Project from '@/assets/animated/project.png'
 import Message from '@/assets/animated/message.png'
 import LeftTop from '@/assets/animated/left-top.png'
 import LeftBottom from '@/assets/animated/left-second.png'
+import { motion, useInView } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 
 function SlideImag() {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true, amount: 0.2 })
+    const [start, setStart] = useState(false)
+
+    useEffect(() => {
+        if (isInView) {
+            const timer = setTimeout(() => setStart(true), 500)
+            return () => clearTimeout(timer)
+        }
+    }, [isInView])
+
     return (
-        <div className="absolute inset-0 hidden lg:block">
+        <motion.div
+            ref={ref}
+            className="absolute inset-0"
+            initial={{ scale: 1.3 }}
+            animate={{ scale: start ? 1 : 1.3 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+        >
             <Image
                 alt=""
                 src={James}
                 width={135}
                 height={206}
-                className="absolute right-0 top-[260px]"
+                className="absolute right-0 top-0 lg:top-[260px]"
                 quality={100}
             />
             <Image
@@ -27,7 +47,7 @@ function SlideImag() {
                 src={EmptyR}
                 width={61}
                 height={137}
-                className="absolute right-0 top-[500px] z-10"
+                className="absolute right-0 top-[400px] z-10"
                 quality={100}
             />
             <Image
@@ -35,7 +55,7 @@ function SlideImag() {
                 src={Follow}
                 width={161}
                 height={118}
-                className="absolute right-0 top-[602px] z-20"
+                className="absolute right-0 top-[470px] z-20 lg:top-[602px]"
                 quality={100}
             />
             <Image
@@ -51,7 +71,7 @@ function SlideImag() {
                 src={EmptyBottom}
                 width={334}
                 height={120}
-                className="absolute bottom-0 right-0 z-10"
+                className="z- 1 0 absolute bottom-0 right-0 hidden lg:block"
                 quality={100}
             />
             <Image
@@ -59,7 +79,7 @@ function SlideImag() {
                 src={Calendar}
                 width={54}
                 height={54}
-                className="absolute bottom-0 left-[461px] z-20"
+                className="absolute bottom-20 left-3/4 z-20 lg:bottom-0 lg:left-[461px]"
                 quality={100}
             />
             <Image
@@ -67,7 +87,7 @@ function SlideImag() {
                 src={EmptyLeftB}
                 width={430}
                 height={30}
-                className="absolute bottom-0 left-[83px] z-10"
+                className="absolute bottom-0 left-[83px] z-10 hidden lg:block"
                 quality={100}
             />
             <Image
@@ -75,7 +95,7 @@ function SlideImag() {
                 src={Project}
                 width={408}
                 height={119}
-                className="absolute bottom-0 left-0 z-10"
+                className="absolute bottom-10 left-0 z-10 lg:bottom-0"
                 quality={100}
             />
             <Image
@@ -83,7 +103,7 @@ function SlideImag() {
                 src={Message}
                 width={50}
                 height={54}
-                className="absolute bottom-[135px] left-0 z-30"
+                className="absolute bottom-3/4 left-0 z-30 lg:bottom-[135px]"
                 quality={100}
             />
             <Image
@@ -91,7 +111,7 @@ function SlideImag() {
                 src={LeftTop}
                 width={47}
                 height={137}
-                className="absolute bottom-[375px] left-0 z-10"
+                className="absolute bottom-3/4 left-0 z-10 lg:bottom-[375px]"
                 quality={100}
             />
             <Image
@@ -102,7 +122,7 @@ function SlideImag() {
                 className="absolute bottom-[154px] left-0 z-20"
                 quality={100}
             />
-        </div>
+        </motion.div>
     )
 }
 

@@ -2,7 +2,7 @@ import SectionBg from '@/assets/section-desktop-hero.png'
 import SectionEllipse from '@/assets/ellipse.webp'
 function InteligenceSection() {
     return (
-        <section className="relative z-0">
+        <section className="relative z-0 pt-16 lg:pt-40">
             <div
                 className="absolute -top-60 left-0 z-10 h-[1200px] w-[1700px] max-w-full bg-contain bg-no-repeat 2xl:-top-96 2xl:h-[1500px] 2xl:w-[2000px]"
                 style={{ backgroundImage: `url(${SectionEllipse.src})` }}

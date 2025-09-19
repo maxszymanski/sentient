@@ -6,14 +6,12 @@ import { ReactNode } from 'react'
 interface CardProps {
     title: string
     children: ReactNode
-    position: { x: number; y: number }
 }
 
-function Card({ title, children, position }: CardProps) {
+function Card({ title, children }: CardProps) {
     return (
         <div
-            className={`faq-border card-bg relative z-10 hidden overflow-hidden rounded-2xl p-6 text-left lg:absolute lg:block`}
-            style={{ left: `${position.x}px`, top: `${position.y}px` }}
+            className={`faq-border card-bg overflow-hidden rounded-2xl p-6 text-left`}
         >
             <Image
                 src={Ellipse}

@@ -48,7 +48,7 @@ function ContactForm() {
     ]
 
     return (
-        <div className="mx-auto mt-[60px] w-full max-w-[520px] pl-2 sm:pl-0">
+        <div className="relative mx-auto mt-[60px] w-full max-w-[520px] pl-2 sm:pl-0">
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className="relative flex h-full min-h-[537px] w-full flex-col bg-cover bg-left bg-no-repeat px-4 pt-10 sm:bg-contain sm:bg-top sm:px-7"
