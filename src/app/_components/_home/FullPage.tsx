@@ -6,11 +6,9 @@ const FullPage = ({ children, ...options }: { children: ReactNode }) => {
     return (
         <ReactFullpage
             credits={{
-                enabled: true,
-                label: 'Made with fullPage.js',
-                position: 'right',
+                enabled: false,
             }}
-            licenseKey="xxxxxxxxxxxxxx"
+            licenseKey="NF77H-QTJI6-ZID7I-HZQ78-XWEAL"
             {...options}
             render={() => {
                 return <ReactFullpage.Wrapper>{children}</ReactFullpage.Wrapper>
