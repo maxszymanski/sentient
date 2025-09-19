@@ -1,4 +1,4 @@
-import Hero from '@/assets/Hero.webp'
+import Hero from '@/assets/Hero-no-dots.webp'
 import Link from 'next/link'
 
 function Header() {
