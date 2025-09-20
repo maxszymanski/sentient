@@ -95,17 +95,19 @@ function SecuritySection() {
                 <div className="relative z-[60] w-full px-4 md:pt-6 lg:px-6">
                     <div className="security-box relative flex flex-col items-center rounded-xl md:h-[95%]">
                         <div className="flex flex-col items-center">
-                            {slides.map((slide, idx) => (
-                                <Image
-                                    alt={`security image number ${idx + 1}`}
-                                    src={slide.image}
-                                    quality={100}
-                                    width={slide.size.width}
-                                    height={slide.size.height}
-                                    key={slide.title + idx}
-                                    className={`block h-[262px] transition-all duration-1000 ${activeIndex === idx ? 'relative opacity-100 delay-300' : 'absolute opacity-0'}`}
-                                />
-                            ))}
+                            <div className="flex h-[200px] flex-col items-center sm:h-[262px]">
+                                {slides.map((slide, idx) => (
+                                    <Image
+                                        alt={`security image number ${idx + 1}`}
+                                        src={slide.image}
+                                        quality={100}
+                                        width={slide.size.width}
+                                        height={slide.size.height}
+                                        key={slide.title + idx}
+                                        className={`block transition-all duration-1000 ${activeIndex === idx ? 'relative opacity-100 delay-300' : 'absolute opacity-0'}`}
+                                    />
+                                ))}
+                            </div>
 
                             <div className="relative px-2 pb-8 lg:px-0 lg:pb-0">
                                 {slides.map((slide, idx) => (
