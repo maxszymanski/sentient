@@ -2,7 +2,6 @@
 import SectionBg from '@/assets/section-desktop-hero.png'
 import SectionEllipse from '@/assets/ellipse.webp'
 import { useState } from 'react'
-import { div } from 'framer-motion/client'
 
 const btns = [
     'Daily Brief That Actually Matters',

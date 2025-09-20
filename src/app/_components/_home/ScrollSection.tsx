@@ -207,7 +207,7 @@ function ScrollSection() {
                     <InteligenceSection />
                     <div className="relative w-full overflow-hidden">
                         <div
-                            className="top-30 -right-50 absolute z-20 h-full max-h-[1570px] w-[956px] max-w-full bg-contain bg-no-repeat"
+                            className="top-30 -right-50 absolute z-[60] h-full max-h-[1570px] w-[956px] max-w-full bg-contain bg-no-repeat"
                             style={{
                                 backgroundImage: `url(${LargeEllipse.src})`,
                             }}

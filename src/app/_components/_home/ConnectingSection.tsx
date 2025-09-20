@@ -4,7 +4,7 @@ import ConnectBg from '@/assets/connect-bg.png'
 
 function ConnectingSection() {
     return (
-        <section className="relative z-30 mt-16 sm:mt-0 md:-mt-[200px]">
+        <section className="relative z-[70] mt-16 sm:mt-0 md:-mt-[200px]">
             <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center">
                 <div className="relative mx-auto h-[250px] w-full max-w-[767px] sm:h-[398px]">
                     <Image
