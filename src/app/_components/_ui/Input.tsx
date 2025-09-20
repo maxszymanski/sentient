@@ -40,9 +40,9 @@ function Input({
                 type="text"
                 {...formRegister}
                 {...rest}
-                className={`placeholder:text-white/24 input-shadow placeholder:text-sans input-border relative inline-block h-[49px] w-full rounded-[10px] bg-left px-3.5 py-3 leading-5 text-white outline-none placeholder:leading-5 focus-visible:outline-none sm:bg-cover sm:bg-center ${
+                className={`placeholder:text-white/24 input-shadow placeholder:text-sans relative inline-block h-[49px] w-full rounded-[10px] bg-left px-3.5 py-3 leading-5 text-white outline-none placeholder:leading-5 focus-visible:outline-none sm:bg-cover sm:bg-center ${
                     error ? 'bg-red-300/20' : 'bg-dark'
-                } ${shouldFloat ? '' : 'border-white/12 border'} `}
+                } ${shouldFloat ? 'border-white/12 border sm:border-0' : 'border-white/12 border'} `}
                 onFocus={() => setIsFocused(true)}
                 onBlur={(e) => {
                     setIsFocused(false)

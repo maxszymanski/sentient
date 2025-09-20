@@ -64,9 +64,9 @@ const slides = [
 ]
 
 function SecuritySection() {
-    const [activeIndex, setActiveIndex] = useState(3)
+    const [activeIndex, setActiveIndex] = useState(0)
     return (
-        <section className="relative z-50 pl-2 pt-40 lg:pt-52 xl:pl-0">
+        <section className="relative z-50 pl-2 pt-32 md:pt-40 lg:pt-52 xl:pl-0">
             <h2 className="heading-gradient-text leading-14 font-twk mx-auto mb-[60px] w-full text-center text-[44px] tracking-[-0.5px]">
                 Trust through transparency, <br /> privacy through design
             </h2>
@@ -74,7 +74,7 @@ function SecuritySection() {
                 className="relative z-50 mx-auto flex h-[781px] w-full max-w-[1200px] flex-col bg-cover bg-left bg-no-repeat py-6 md:flex-row md:py-0 xl:bg-center"
                 style={{ backgroundImage: `url(${SectionBg.src})` }}
             >
-                <div className="relative flex w-full cursor-default flex-col pb-16 md:max-w-[273px]">
+                <div className="relative flex w-full cursor-default flex-col pb-8 md:max-w-[273px]">
                     <div className="border-white/12 flex w-full border-b px-5 pb-7 md:pt-6 lg:px-9">
                         <Logo />
                     </div>
@@ -103,15 +103,15 @@ function SecuritySection() {
                                     width={slide.size.width}
                                     height={slide.size.height}
                                     key={slide.title + idx}
-                                    className={`transition-all duration-1000 ${activeIndex === idx ? 'relative opacity-100 delay-300' : 'absolute opacity-0'}`}
+                                    className={`block h-[262px] transition-all duration-1000 ${activeIndex === idx ? 'relative opacity-100 delay-300' : 'absolute opacity-0'}`}
                                 />
                             ))}
 
-                            <div className="relative">
+                            <div className="relative px-2 pb-8 lg:px-0 lg:pb-0">
                                 {slides.map((slide, idx) => (
                                     <div
                                         key={idx}
-                                        className={`w-full text-center transition-all duration-1000 ${activeIndex === idx ? 'relative scale-100 opacity-100 delay-300' : 'absolute top-0 scale-0 opacity-0'}`}
+                                        className={`w-full text-center transition-all duration-1000 ${activeIndex === idx ? 'relative scale-100 opacity-100 delay-300' : 'absolute left-0 top-0 scale-0 opacity-0'}`}
                                     >
                                         <h3 className="heading-gradient-text leading-11 font-twk mb-6 text-3xl tracking-[-0.5px] sm:text-[32px]">
                                             {slide.title}

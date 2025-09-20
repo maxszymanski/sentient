@@ -41,7 +41,7 @@ function Select({
                     id={name}
                     {...formRegister}
                     {...rest}
-                    className={`input-shadow input-border relative inline-block h-[49px] w-full cursor-pointer appearance-none rounded-[10px] bg-cover bg-center px-3.5 py-3 leading-5 outline-none focus-visible:outline-none ${error ? 'bg-red-300/20' : 'bg-dark'} ${shouldFloat ? '' : 'border-white/12 border'} ${valueFromWatch != '' ? 'text-white' : 'text-white/24'} `}
+                    className={`input-shadow relative inline-block h-[49px] w-full cursor-pointer appearance-none rounded-[10px] bg-left bg-no-repeat px-3.5 py-3 leading-5 outline-none focus-visible:outline-none sm:bg-cover sm:bg-center ${error ? 'bg-red-300/20' : 'bg-dark'} ${shouldFloat ? 'border-white/12 border sm:border-0' : 'border-white/12 border'} ${valueFromWatch != '' ? 'text-white' : 'text-white/24'} `}
                     onFocus={() => setIsFocused(true)}
                     onBlur={(e) => {
                         setIsFocused(false)

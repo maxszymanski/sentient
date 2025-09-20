@@ -139,7 +139,7 @@ function ScrollSection() {
             <Header />
 
             <div className="section">
-                <section className="bg-dark relative flex h-full items-center justify-center overflow-hidden">
+                <section className="bg-dark relative flex h-dvh items-center justify-center overflow-hidden lg:h-full">
                     <div className="relative flex w-full max-w-7xl items-center justify-center gap-8 px-4 py-16 text-center lg:gap-0">
                         <h2 className="font-twk md:leading-14 heading-gradient-text w-f relative z-40 h-full w-full max-w-[590px] text-4xl md:text-[44px] md:tracking-[-0.5px]">
                             Your brain wasn&apos;t designed for digital overload
@@ -176,7 +176,7 @@ function ScrollSection() {
                 </section>
             </div>
             <div className="section">
-                <section className="flex h-full items-center justify-center">
+                <section className="flex h-dvh items-center justify-center lg:h-full">
                     <div className="flex max-w-7xl flex-col items-center px-4 py-16 text-center">
                         <Image
                             src={SectionElispe}
@@ -201,7 +201,7 @@ function ScrollSection() {
             </div>
             <div className="section">
                 <div
-                    className="normal-scroll-section h-full overflow-y-auto"
+                    className="normal-scroll-section h-dvh overflow-y-auto lg:h-full"
                     ref={scrollRef}
                 >
                     <InteligenceSection />

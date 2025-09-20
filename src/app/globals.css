@@ -319,3 +319,29 @@
         rgba(255, 255, 255, 0) 100%
     );
 }
+
+.input-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background:
+        linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)
+        ),
+        linear-gradient(
+            310.72deg,
+            rgba(82, 195, 255, 0) 90.41%,
+            rgba(82, 195, 255, 0.25) 98.99%
+        );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+}

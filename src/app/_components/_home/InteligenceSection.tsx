@@ -49,19 +49,21 @@ function InteligenceSection() {
                 style={{ backgroundImage: `url(${SectionBg.src})` }}
             >
                 <div className="relative z-20 flex h-full w-full flex-col items-center justify-end overflow-x-hidden lg:justify-start lg:pt-[436px]">
-                    {slides.map((slide, idx) => (
-                        <div
-                            key={idx}
-                            className={`transition-all duration-1000 ${activeIndex === idx ? 'relative scale-100 opacity-100 delay-300' : 'absolute scale-0 opacity-0'}`}
-                        >
-                            <h3 className="text-heading-gradient font-t leading-11 mb-5 px-4 text-center text-[32px] tracking-[-0.5px]">
-                                {slide.title}
-                            </h3>
-                            <p className="text-white72 mb-4 max-w-[774px] px-4 text-center leading-[25px]">
-                                {slide.content}
-                            </p>
-                        </div>
-                    ))}
+                    <div className="relative">
+                        {slides.map((slide, idx) => (
+                            <div
+                                key={idx}
+                                className={`transition-all duration-1000 ${activeIndex === idx ? 'relative scale-100 opacity-100 delay-300' : 'absolute left-0 top-0 scale-0 opacity-0'}`}
+                            >
+                                <h3 className="text-heading-gradient font-t leading-11 mb-5 px-4 text-center text-[32px] tracking-[-0.5px]">
+                                    {slide.title}
+                                </h3>
+                                <p className="text-white72 mb-4 max-w-[774px] px-4 text-center leading-[25px]">
+                                    {slide.content}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
                     <div className="mb-[60px] flex w-full max-w-[352px] items-center justify-center gap-2 px-2 md:mb-[92px]">
                         {btns.map((btn, idx) => (
                             <div
