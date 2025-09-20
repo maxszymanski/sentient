@@ -48,36 +48,37 @@ function ComparisonSection() {
                     className="mx-auto flex min-h-[530px] w-full max-w-[725px] flex-col bg-cover bg-center px-4 pt-[52px] md:px-0"
                     style={{ backgroundImage: `url(${ChatBg.src})` }}
                 >
-                    <div className="flex w-full flex-col items-center justify-between gap-10 sm:flex-row sm:items-start">
+                    <div className="relative flex w-full flex-col items-center justify-between gap-10 sm:flex-row sm:items-start">
                         <ComparisonCard
                             lines={3}
                             name="Sentient"
                             list={sentientList}
+                            isActive
                         />
-                        {selectedBtn === 0 && (
-                            <ComparisonCard
-                                lines={1}
-                                linesColor="red"
-                                name="Chatbot"
-                                list={chatbotList}
-                            />
-                        )}
-                        {selectedBtn === 1 && (
-                            <ComparisonCard
-                                lines={1}
-                                linesColor="red"
-                                name="Note-Taking Apps"
-                                list={chatbotList}
-                            />
-                        )}
-                        {selectedBtn === 2 && (
-                            <ComparisonCard
-                                lines={1}
-                                linesColor="red"
-                                name="AI Assistants"
-                                list={chatbotList}
-                            />
-                        )}
+
+                        <ComparisonCard
+                            lines={1}
+                            linesColor="red"
+                            name="Chatbot"
+                            list={chatbotList}
+                            isActive={selectedBtn === 0}
+                        />
+
+                        <ComparisonCard
+                            lines={1}
+                            linesColor="red"
+                            name="Note-Taking Apps"
+                            list={chatbotList}
+                            isActive={selectedBtn === 1}
+                        />
+
+                        <ComparisonCard
+                            lines={1}
+                            linesColor="red"
+                            name="AI Assistants"
+                            list={chatbotList}
+                            isActive={selectedBtn === 2}
+                        />
                     </div>
                     <Link
                         href="/"
