@@ -55,30 +55,29 @@ function ComparisonSection() {
                             list={sentientList}
                             isActive
                         />
-
-                        <ComparisonCard
-                            lines={1}
-                            linesColor="red"
-                            name="Chatbot"
-                            list={chatbotList}
-                            isActive={selectedBtn === 0}
-                        />
-
-                        <ComparisonCard
-                            lines={1}
-                            linesColor="red"
-                            name="Note-Taking Apps"
-                            list={chatbotList}
-                            isActive={selectedBtn === 1}
-                        />
-
-                        <ComparisonCard
-                            lines={1}
-                            linesColor="red"
-                            name="AI Assistants"
-                            list={chatbotList}
-                            isActive={selectedBtn === 2}
-                        />
+                        <div className="relative">
+                            <ComparisonCard
+                                lines={1}
+                                linesColor="red"
+                                name="Chatbot"
+                                list={chatbotList}
+                                isActive={selectedBtn === 0}
+                            />
+                            <ComparisonCard
+                                lines={1}
+                                linesColor="red"
+                                name="Note-Taking Apps"
+                                list={chatbotList}
+                                isActive={selectedBtn === 1}
+                            />
+                            <ComparisonCard
+                                lines={1}
+                                linesColor="red"
+                                name="AI Assistants"
+                                list={chatbotList}
+                                isActive={selectedBtn === 2}
+                            />{' '}
+                        </div>
                     </div>
                     <Link
                         href="/"

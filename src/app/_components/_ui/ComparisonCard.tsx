@@ -16,7 +16,7 @@ function ComparisonCard({
 }) {
     return (
         <div
-            className={`flex max-w-[296px] flex-col transition-all duration-1000 ${isActive ? 'relative scale-100 opacity-100 delay-300' : 'absolute right-0 top-0 scale-0 opacity-0'}`}
+            className={`flex max-w-[296px] flex-col transition-all duration-1000 ${isActive ? 'relative scale-100 opacity-100 delay-300' : 'absolute top-0 scale-0 opacity-0'}`}
         >
             <div className="mb-7 flex items-center gap-3">
                 <div className="flex items-center gap-2">
