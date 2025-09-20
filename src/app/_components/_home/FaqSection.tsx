@@ -30,6 +30,7 @@ function FaqSection() {
                                 alt="email icon"
                                 height={43}
                                 width={43}
+                                quality={100}
                             />
                         </Link>
                         <Link
@@ -43,6 +44,7 @@ function FaqSection() {
                                 alt="X icon"
                                 height={43}
                                 width={43}
+                                quality={100}
                             />
                         </Link>
                     </div>
