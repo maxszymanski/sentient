@@ -26,23 +26,26 @@ function ComparisonSection() {
     const [selectedBtn, setSelectedBtn] = useState(0)
     return (
         <section className="relative z-50 pt-32 lg:pt-40">
-            <div className="mx-auto w-full max-w-[725px]">
-                <h2 className="heading-gradient-text leading-14 font-twk mx-auto mb-[60px] w-full px-4 text-center text-[44px] tracking-[-0.5px] lg:px-0">
+            <div className="w-full">
+                <h2 className="heading-gradient-text leading-14 font-twk mx-auto w-full px-4 text-center text-[44px] tracking-[-0.5px] lg:px-0">
                     Beyond chatbots <br /> and productivity apps
                 </h2>
-                <div className="border-white/16 flex w-full items-center gap-8 overflow-x-auto border-b px-4 md:justify-between lg:px-0">
-                    {btns.map((name, index) => (
-                        <button
-                            key={name}
-                            className={`font-twk relative z-20 block shrink-0 cursor-pointer text-nowrap border-b-2 pb-[26px] pt-[53px] text-center text-lg leading-5 transition-colors duration-300 hover:text-white ${selectedBtn === index ? 'border-[#77C3FF] text-white' : 'text-white72 border-transparent'} `}
-                            onClick={() => setSelectedBtn(index)}
-                        >
-                            <span className="block">{name}</span>
-                        </button>
-                    ))}
+                <div className="mx-auto w-full max-w-[800px]">
+                    <div className="flex w-full items-center gap-8 overflow-x-auto overflow-y-hidden px-4 pt-[60px] md:justify-center md:gap-10 md:overflow-x-visible">
+                        {btns.map((name, index) => (
+                            <button
+                                key={name}
+                                className={`font-twk comparion-button relative z-20 block shrink-0 cursor-pointer text-nowrap pb-[26px] pt-[53px] text-center text-lg leading-5 transition-colors duration-300 hover:text-white ${selectedBtn === index ? 'comparion-button-active text-white' : ''} `}
+                                onClick={() => setSelectedBtn(index)}
+                            >
+                                <span className="block">{name}</span>
+                            </button>
+                        ))}
+                    </div>
+                    <div className="bg-white/16 mx-auto h-px w-full max-w-[693px]"></div>
                 </div>
                 <div
-                    className="flex min-h-[530px] w-full flex-col bg-cover bg-center px-4 pt-[52px] md:px-0"
+                    className="mx-auto flex min-h-[530px] w-full max-w-[725px] flex-col bg-cover bg-center px-4 pt-[52px] md:px-0"
                     style={{ backgroundImage: `url(${ChatBg.src})` }}
                 >
                     <div className="flex w-full flex-col items-center justify-between gap-10 sm:flex-row sm:items-start">
