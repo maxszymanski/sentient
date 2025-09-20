@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import Email from '@/assets/email-icon.png'
-import X from '@/assets/x-icon.png'
+import LinkBg from '@/assets/link-bg.png'
+import Email from '@/assets/link-email.svg'
+import X from '@/assets/link-x.svg'
 import FaqBg from '@/assets/faq-bg.png'
 import FaqQuestions from '../_ui/FaqQuestions'
 
@@ -23,13 +24,20 @@ function FaqSection() {
                     <div className="mt-7 flex items-center gap-3">
                         <Link
                             href="mailto:hello@sentient.com"
-                            className="my-outline focus-visible:!rounded-[10px]"
+                            className="my-outline border-white/12 relative flex h-[43px] w-[43px] items-center justify-center focus-visible:!rounded-[10px]"
                         >
+                            <Image
+                                src={LinkBg}
+                                alt=""
+                                fill
+                                quality={100}
+                                className="object-cover"
+                            />
                             <Image
                                 src={Email}
                                 alt="email icon"
-                                height={43}
-                                width={43}
+                                width={20}
+                                height={16}
                                 quality={100}
                             />
                         </Link>
@@ -37,13 +45,14 @@ function FaqSection() {
                             href="https://x.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="my-outline focus-visible:!rounded-[10px]"
+                            className="my-outline relative flex h-[43px] w-[43px] items-center justify-center focus-visible:!rounded-[10px]"
                         >
+                            <Image src={LinkBg} alt="" fill quality={100} />
                             <Image
                                 src={X}
                                 alt="X icon"
-                                height={43}
-                                width={43}
+                                height={22}
+                                width={24}
                                 quality={100}
                             />
                         </Link>
