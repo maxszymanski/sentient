@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import LogoIcon from '@/assets/logo.png'
+import LogoIcon from '@/assets/logo.svg'
 import Link from 'next/link'
 
 function LogoLink() {

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import LogoIcon from '@/assets/logo.png'
+import LogoIcon from '@/assets/logo.svg'
 
 function Logo() {
     return (
