@@ -62,7 +62,6 @@ const cards = [
 
 function ScrollSection() {
     const fullpageOptions = {
-        sectionsColor: ['#f8fafc', '#ffffff'],
         scrollingSpeed: 700,
         controlArrows: false,
         slidesNavigation: false,
@@ -110,11 +109,13 @@ function ScrollSection() {
 
                 const fullpage = (
                     window as Window & {
-                        fullpage_api?: { moveSectionUp: () => void }
+                        fullpage_api?: {
+                            moveTo: (section: number, slide?: number) => void
+                        }
                     }
                 ).fullpage_api
 
-                fullpage?.moveSectionUp()
+                fullpage?.moveTo(3)
             }
         }
 
@@ -138,7 +139,7 @@ function ScrollSection() {
             <Header />
 
             <div className="section">
-                <section className="bg-dark relative flex min-h-dvh items-center justify-center overflow-hidden lg:min-h-screen">
+                <section className="bg-dark relative flex h-full items-center justify-center overflow-hidden">
                     <div className="relative flex w-full max-w-7xl items-center justify-center gap-8 px-4 py-16 text-center lg:gap-0">
                         <h2 className="font-twk md:leading-14 heading-gradient-text w-f relative z-40 h-full w-full max-w-[590px] text-4xl md:text-[44px] md:tracking-[-0.5px]">
                             Your brain wasn&apos;t designed for digital overload
@@ -175,7 +176,7 @@ function ScrollSection() {
                 </section>
             </div>
             <div className="section">
-                <section className="flex min-h-dvh items-center justify-center lg:min-h-screen">
+                <section className="flex h-full items-center justify-center">
                     <div className="flex max-w-7xl flex-col items-center px-4 py-16 text-center">
                         <Image
                             src={SectionElispe}
@@ -200,7 +201,7 @@ function ScrollSection() {
             </div>
             <div className="section">
                 <div
-                    className="normal-scroll-section h-screen overflow-y-auto"
+                    className="normal-scroll-section h-full overflow-y-auto"
                     ref={scrollRef}
                 >
                     <InteligenceSection />
