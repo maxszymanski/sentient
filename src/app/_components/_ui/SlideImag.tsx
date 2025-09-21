@@ -114,7 +114,7 @@ function SlideImag() {
                 src={Project}
                 width={408}
                 height={119}
-                className="absolute bottom-10 left-0 z-10 lg:bottom-0"
+                className="absolute bottom-0 left-0 z-10"
                 quality={100}
             />
             <Image
