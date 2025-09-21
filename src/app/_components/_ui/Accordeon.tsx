@@ -34,7 +34,7 @@ function Accordeon({ onClick, isOpen, title, answer }: AccorderonProps) {
             </h3>
 
             <p
-                className={`px-3 text-sm leading-6 text-[#F1F7FEB5] sm:text-base sm:leading-[25px] ${isOpen ? 'max-h-[500px] pb-3 pt-4' : 'delay-50 max-h-0'} select-none transition-all duration-300`}
+                className={`px-3 text-sm leading-6 text-[#F1F7FEB5] sm:text-base sm:leading-[25px] ${isOpen ? 'visible max-h-[500px] pb-3 pt-4' : 'delay-50 invisible max-h-0'} select-none transition-all duration-300`}
             >
                 {answer}
             </p>
