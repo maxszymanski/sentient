@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import LinkBg from '@/assets/link-bg.png'
+import LinkBg from '@/assets/link-ellipse.svg'
 import Email from '@/assets/link-email.svg'
 import X from '@/assets/link-x.svg'
 import FaqBg from '@/assets/faq-bg.png'
@@ -24,8 +24,9 @@ function FaqSection() {
                     <div className="mt-7 flex items-center gap-3">
                         <Link
                             href="mailto:hello@sentient.com"
-                            className="my-outline border-white/12 relative flex h-[43px] w-[43px] items-center justify-center focus-visible:!rounded-[10px]"
+                            className="my-outline hover:bg-white/12 relative flex h-[43px] w-[43px] items-center justify-center overflow-hidden rounded-[10px] transition-colors duration-300 focus-visible:!rounded-[10px]"
                         >
+                            <div className="social-link-border absolute inset-0"></div>
                             <Image
                                 src={LinkBg}
                                 alt=""
@@ -45,8 +46,9 @@ function FaqSection() {
                             href="https://x.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="my-outline relative flex h-[43px] w-[43px] items-center justify-center focus-visible:!rounded-[10px]"
+                            className="my-outline hover:bg-white/12 relative flex h-[43px] w-[43px] items-center justify-center overflow-hidden rounded-[10px] transition-colors duration-300 focus-visible:!rounded-[10px]"
                         >
+                            <div className="social-link-border absolute inset-0"></div>
                             <Image src={LinkBg} alt="" fill quality={100} />
                             <Image
                                 src={X}

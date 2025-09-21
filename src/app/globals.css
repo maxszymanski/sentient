@@ -381,3 +381,27 @@
 .comparion-button.comparion-button-active::before {
     opacity: 1;
 }
+
+.social-link-border {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 0.5px;
+    opacity: 1;
+    background:
+        linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.11),
+            rgba(255, 255, 255, 0.11)
+        ),
+        linear-gradient(180deg, rgba(2, 6, 20, 0) 92.42%, #49c0ff 100%),
+        linear-gradient(19.75deg, rgba(255, 255, 255, 0) 75.46%, #ffffff 100%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+}
