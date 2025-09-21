@@ -58,7 +58,7 @@ function SlideImag() {
                 src={James}
                 width={135}
                 height={206}
-                className="absolute right-0 top-5 lg:bottom-1/2 lg:top-auto"
+                className="absolute right-0 top-0 lg:bottom-1/2 lg:top-auto"
                 quality={100}
             />
             <Image
