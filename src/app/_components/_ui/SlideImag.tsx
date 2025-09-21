@@ -23,7 +23,8 @@ function SlideImag() {
     useEffect(() => {
         const mediaQuery = window.matchMedia('(max-width: 767px)')
 
-        const handleMediaChange = (e) => setIsMobile(e.matches)
+        const handleMediaChange = (e: MediaQueryListEvent) =>
+            setIsMobile(e.matches)
 
         setIsMobile(mediaQuery.matches)
         mediaQuery.addEventListener('change', handleMediaChange)
