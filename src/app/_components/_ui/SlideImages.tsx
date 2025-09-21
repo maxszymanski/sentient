@@ -14,7 +14,7 @@ import LeftBottom from '@/assets/animated/left-second.png'
 import { motion, useInView } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 
-function SlideImag() {
+function SlideImages() {
     const ref = useRef(null)
 
     const [isMobile, setIsMobile] = useState(false)
@@ -145,4 +145,4 @@ function SlideImag() {
     )
 }
 
-export default SlideImag
+export default SlideImages

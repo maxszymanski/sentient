@@ -27,14 +27,14 @@ function Accordeon({ onClick, isOpen, title, answer }: AccorderonProps) {
                         <FaMinus className="size-[17px] text-white/60" />
 
                         <FaMinus
-                            className={`absolute left-0 top-1/2 size-[17px] -translate-y-1/2 text-white/60 ${isOpen ? 'rotate-0' : 'rotate-90'} transition-transform`}
+                            className={`absolute left-0 top-1/2 size-[17px] -translate-y-1/2 text-white/60 ${isOpen ? 'rotate-0' : 'rotate-90'} transition-transform duration-300`}
                         />
                     </span>
                 </button>
             </h3>
 
             <p
-                className={`px-3 text-sm leading-6 text-[#F1F7FEB5] sm:text-base sm:leading-[25px] ${isOpen ? 'max-h-[500px] pb-3 pt-4' : 'max-h-0'} select-none transition-all duration-200`}
+                className={`px-3 text-sm leading-6 text-[#F1F7FEB5] sm:text-base sm:leading-[25px] ${isOpen ? 'max-h-[500px] pb-3 pt-4' : 'delay-50 max-h-0'} select-none transition-all duration-300`}
             >
                 {answer}
             </p>

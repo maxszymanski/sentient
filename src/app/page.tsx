@@ -1,4 +1,4 @@
-import ScrollSection from './_components/_home/ScrollSection'
+import FullPageContainer from './_components/_home/FullPageContainer'
 import Nav from './_components/_nav/Nav'
 
 export default function Home() {
@@ -6,7 +6,7 @@ export default function Home() {
         <>
             <Nav />
             <main>
-                <ScrollSection />
+                <FullPageContainer />
             </main>
         </>
     )
