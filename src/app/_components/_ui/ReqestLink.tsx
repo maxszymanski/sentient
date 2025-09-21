@@ -14,6 +14,7 @@ function ReqestLink() {
                 width={70}
                 height={39}
                 className="absolute left-0"
+                quality={100}
             />
             <span className="">Request Demo</span>
         </Link>
