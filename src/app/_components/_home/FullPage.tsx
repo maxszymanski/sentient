@@ -8,7 +8,7 @@ const FullPage = ({ children, ...options }: { children: ReactNode }) => {
             credits={{
                 enabled: false,
             }}
-            licenseKey={process.env.NEXT_PUBLIC_FULLPAGE_KEY}
+            licenseKey="NF77H-QTJI6-ZID7I-HZQ78-XWEAL"
             {...options}
             render={() => {
                 return <ReactFullpage.Wrapper>{children}</ReactFullpage.Wrapper>
