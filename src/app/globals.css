@@ -7,6 +7,8 @@
     --font-twk: var(--font-twk), sans-serif;
     --font-britti: var(--font-britti), sans-serif;
     --font-diatype: var(--font-diatype), sans-serif;
+
+    --breakpoint-xs: 360px;
 }
 
 .nav-bg {
