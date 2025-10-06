@@ -1,7 +1,7 @@
 'use client'
 import SectionBg from '@/assets/section-desktop-hero.png'
 import SectionEllipse from '@/assets/ellipse.webp'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const btns = [
     'Daily Brief That Actually Matters',
@@ -35,6 +35,29 @@ const slides = [
 
 function InteligenceSection() {
     const [activeIndex, setActiveIndex] = useState(0)
+    const duration = 7000
+    const timerRef = useRef<NodeJS.Timeout | null>(null)
+
+    const startTimer = () => {
+        if (timerRef.current) clearInterval(timerRef.current)
+
+        timerRef.current = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % slides.length)
+        }, duration)
+    }
+
+    useEffect(() => {
+        startTimer()
+        return () => {
+            if (timerRef.current) clearInterval(timerRef.current)
+        }
+    }, [])
+
+    const handleClick = (idx: number) => {
+        setActiveIndex(idx)
+        startTimer()
+    }
+
     return (
         <section className="relative z-0 pt-16 lg:pt-40">
             <div
@@ -53,7 +76,7 @@ function InteligenceSection() {
                         {slides.map((slide, idx) => (
                             <div
                                 key={idx}
-                                className={`transition-all duration-1000 ${activeIndex === idx ? 'relative scale-100 opacity-100 delay-300' : 'absolute left-0 top-0 scale-0 opacity-0'}`}
+                                className={`transition-all duration-1000 ${activeIndex === idx ? 'delay-400 relative translate-y-0 opacity-100' : 'absolute left-0 top-0 translate-y-8 opacity-0'}`}
                             >
                                 <h3 className="text-heading-gradient font-t leading-11 mb-5 px-4 text-center text-[32px] tracking-[-0.5px]">
                                     {slide.title}
@@ -68,10 +91,17 @@ function InteligenceSection() {
                         {btns.map((btn, idx) => (
                             <div
                                 key={btn + idx}
-                                className="relative z-10 h-1 w-full rounded-[31px] bg-[#62E9FF29] sm:w-[82px]"
+                                className="relative z-10 h-1 w-full overflow-hidden rounded-[31px] bg-[#62E9FF29] sm:w-[82px]"
                             >
                                 <div
-                                    className={`line-gradient absolute left-0 top-0 z-20 h-full rounded-[31px] transition-[width] duration-500 ${activeIndex == idx ? 'delay-400 w-[73%] sm:w-[60px]' : 'w-0'}`}
+                                    className={`line-gradient absolute left-0 top-0 z-20 h-full rounded-[31px] ${
+                                        activeIndex === idx
+                                            ? 'animate-progress'
+                                            : 'w-0'
+                                    }`}
+                                    style={{
+                                        animationDuration: `${duration}ms`,
+                                    }}
                                 ></div>
                             </div>
                         ))}
@@ -83,7 +113,7 @@ function InteligenceSection() {
                                 key={btn}
                                 name={btn}
                                 isActive={activeIndex === idx}
-                                onClick={() => setActiveIndex(idx)}
+                                onClick={() => handleClick(idx)}
                             />
                         ))}
                     </div>
